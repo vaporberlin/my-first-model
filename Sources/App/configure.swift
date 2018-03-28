@@ -13,7 +13,7 @@ public func configure(
     try routes(router)
     services.register(router, as: Router.self)
 
-    let myService = try EngineServerConfig.detect(from: &env, port: 8003)
+    let myService = EngineServerConfig.default(port: 8003)
     services.register(myService)
 
     try services.register(LeafProvider())
