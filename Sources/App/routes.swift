@@ -5,13 +5,11 @@ import Leaf
 public func routes(_ router: Router) throws {
 
     router.get("users") { req -> Future<View> in
-        let leaf = try req.make(LeafRenderer.self)
-
         let allUsers = User.query(on: req).all()
 
         return allUsers.flatMap(to: View.self) { users in
             let data = ["userlist": users]
-            return leaf.render("userview", data)
+            return try req.view().render("userview", data)
         }
     }
 

@@ -19,6 +19,8 @@ public func configure(
     try services.register(LeafProvider())
     try services.register(FluentSQLiteProvider())
 
+    config.prefer(LeafRenderer.self, for: TemplateRenderer.self)
+
     var databases = DatabaseConfig()
     try databases.add(database: SQLiteDatabase(storage: .memory), as: .sqlite)
     services.register(databases)
