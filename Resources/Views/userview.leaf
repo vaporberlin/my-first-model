@@ -10,7 +10,7 @@
             <div class="input-group">
                 <input type="text" name="username" class="form-control">
                 <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button">Create</button>
+                    <button class="btn btn-outline-secondary" type="submit">Create</button>
                 </div>
             </div>
         </form>
