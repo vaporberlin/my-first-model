@@ -21,7 +21,7 @@ public func configure(
 
     config.prefer(LeafRenderer.self, for: TemplateRenderer.self)
 
-    var databases = DatabaseConfig()
+    var databases = DatabasesConfig()
     try databases.add(database: SQLiteDatabase(storage: .memory), as: .sqlite)
     services.register(databases)
 
